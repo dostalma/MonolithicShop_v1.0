@@ -16,5 +16,4 @@ public interface ProductFacade {
 
     public void deleteProduct(Product product);
 
-    public void initializeTestData();
 }

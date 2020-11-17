@@ -1,6 +1,7 @@
 package cz.mdostal.monolithicshop.configuration;
 
 import cz.mdostal.monolithicshop.Constants;
+import liquibase.integration.spring.SpringLiquibase;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -104,8 +105,8 @@ public class PersistenceConfiguration {
             {
                 setProperty("hibernate.hbm2ddl.auto",
                         env.getProperty("hibernate.hbm2ddl.auto"));
-                setProperty("spring.jpa.hibernate.ddl-auto",
-                        env.getProperty("spring.jpa.hibernate.ddl-auto"));
+                /*setProperty("spring.jpa.hibernate.ddl-auto",
+                        env.getProperty("spring.jpa.hibernate.ddl-auto"));*/
                 setProperty("hibernate.dialect",
                         env.getProperty("hibernate.dialect"));
                 setProperty("hibernate.globally_quoted_identifiers",
@@ -134,6 +135,16 @@ public class PersistenceConfiguration {
         bean.setShowSql(true);
         return bean;
     }
+
+
+    @Bean
+    public SpringLiquibase liquibase() {
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setChangeLog("classpath:project_model.xml");
+        liquibase.setDataSource(dataSource());
+        return liquibase;
+    }
+
     /*
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory emf) {

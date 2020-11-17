@@ -19,7 +19,7 @@ public class SmokeTest {
     private
 
     @Autowired
-    CustomerController controller;
+    ProductController controller;
 
     @Test
     public void contextLoads() {

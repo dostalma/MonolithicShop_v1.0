@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db1" uuid="0fc23bd8-a6e3-42ce-a530-a87015898ea2">
-      <driver-ref>h2.unified</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="MySQL - @localhost" uuid="980cb956-fec7-4e0c-905e-ecf59e78274a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/sampledb</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="Europe/Prague" />
       </driver-properties>

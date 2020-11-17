@@ -15,7 +15,7 @@ import javax.servlet.ServletRegistration;
 /**
  * Main web app initializer, launched when web app is started on servlet container
  */
-@EnableJpaRepositories(basePackages = "cz.mdostal.monolithicshop.Repository;")
+@EnableJpaRepositories(basePackages = "cz.mdostal.monolithicshop.repository;")
 public class WebAppInitializer implements WebApplicationInitializer {
 
     static Logger logger = Logger.getLogger(WebApplicationInitializer.class);

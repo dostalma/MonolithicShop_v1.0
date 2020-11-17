@@ -43,9 +43,10 @@ public class RootPageController {
      * @return a result page
      */
     @RequestMapping(value = "/import", method = RequestMethod.GET)
+    @Deprecated
     public String importTestData(ModelMap model) {
         if (!isTestDataInitialized) {
-            productFacade.initializeTestData();
+            //productFacade.initializeTestData();
             isTestDataInitialized = true;
             model.addAttribute("message", "Import successful");
         } else {
